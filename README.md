@@ -18,6 +18,12 @@ set background=dark
 colorscheme palenight
 ```
 
+To configure lightline, add the following line:
+
+```vim
+let g:lightline.colorscheme = 'palenight'
+```
+
 ### True Colors
 
 To provide the best user experience possible, I recommend enabling true colors. To experience the blissfulness of your editor's true colors, place this in your `.vimrc` or `~/.config/nvim/init.vim` file:
@@ -48,6 +54,8 @@ let g:palenight_terminal_italics=1
 ## Contributors
 
 Contribute to this color scheme and earn your spot in this section of the README.
+
+* Tony Lambiris [@tonylambiris](https://github.com/tonylambiris/)
 
 [screenshot]: images/screenshot.png
 [materialLink]: https://github.com/equinusocio/material-theme
