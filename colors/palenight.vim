@@ -480,7 +480,7 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " }}}
 
-" Neovim terminal colors {{{
+" Setup Terminal Colors {{{
 
 if has("nvim")
   let g:terminal_color_0 =  s:black.gui
@@ -501,6 +501,25 @@ if has("nvim")
   let g:terminal_color_15 = s:comment_grey.gui
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
+elseif has('terminal')
+  let g:terminal_ansi_colors = [
+    \ s:black.gui,
+    \ s:red.gui,
+    \ s:green.gui,
+    \ s:yellow.gui,
+    \ s:blue.gui,
+    \ s:purple.gui,
+    \ s:cyan.gui,
+    \ s:white.gui,
+    \ s:visual_grey.gui,
+    \ s:dark_red.gui,
+    \ s:green.gui,
+    \ s:dark_yellow.gui,
+    \ s:blue.gui,
+    \ s:purple.gui,
+    \ s:cyan.gui,
+    \ s:white.gui
+    \ ]
 endif
 
 " }}}
