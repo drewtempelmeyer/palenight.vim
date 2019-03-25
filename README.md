@@ -56,6 +56,7 @@ let g:palenight_terminal_italics=1
 Contribute to this color scheme and earn your spot in this section of the README.
 
 * Tony Lambiris [@tonylambiris](https://github.com/tonylambiris/)
+* [@chromz](https://github.com/chromz/)
 
 [screenshot]: images/screenshot.png
 [materialLink]: https://github.com/equinusocio/material-theme
