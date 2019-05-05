@@ -429,6 +429,25 @@ call s:h("xmlEndTag", { "fg": s:red })
 call s:h("xmlTag", { "fg": s:red })
 call s:h("xmlTagName", { "fg": s:red })
 
+" PHP
+call s:h("phpInclude", { "fg": s:purple })
+call s:h("phpClass", { "fg": s:yellow })
+call s:h("phpClasses", { "fg": s:yellow })
+call s:h("phpFunction", { "fg": s:blue })
+call s:h("phpType", { "fg": s:purple })
+call s:h("phpKeyword", { "fg": s:purple })
+call s:h("phpVarSelector", { "fg": s:white })
+call s:h("phpIdentifier", { "fg": s:white })
+call s:h("phpMethod", { "fg": s:blue })
+call s:h("phpBoolean", { "fg": s:blue })
+call s:h("phpParent", { "fg": s:white })
+call s:h("phpOperator", { "fg": s:purple })
+call s:h("phpRegion", { "fg": s:purple })
+call s:h("phpUseNamespaceSeparator", { "fg": s:white })
+call s:h("phpClassNamespaceSeparator", { "fg": s:white })
+call s:h("phpDocTags", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
+call s:h("phpDocParam", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
+
 " }}}
 
 " Plugin Highlighting {{{
