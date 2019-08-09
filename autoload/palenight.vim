@@ -1,5 +1,8 @@
 let s:overrides = get(g:, "palenight_color_overrides", {})
 
+" white_mask_<number>: Color of a white mask overlayed on top of
+" `s:colors.black`, where `number * 12` is the alpha value of the white mask
+
 let s:colors = {
       \ "red": get(s:overrides, "red", { "gui": "#ff5370", "cterm": "204", "cterm16": "1" }),
       \ "light_red": get(s:overrides, "light_red", { "gui": "#ff869a", "cterm": "204", "cterm16": "1" }),
@@ -20,8 +23,20 @@ let s:colors = {
       \ "menu_grey": get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
       \ "special_grey": get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
       \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
+      \ "blue_purple": get(s:overrides, "blue_purple", { "gui": "#939ede", "cterm": "39", "cterm16": "4"}),
+      \ "white_mask_1": get(s:overrides, "white_mask_1", { "gui": "#333747", "cterm": "237", "cterm16": "15" }),
+      \ "white_mask_3": get(s:overrides, "white_mask_3", { "gui": "#474b59", "cterm": "238", "cterm16": "15" }),
+      \ "white_mask_11": get(s:overrides, "white_mask_11", { "gui": "#989aa2", "cterm": "238", "cterm16": "15" })
       \}
 
 function! palenight#GetColors()
   return s:colors
+endfunction
+
+function! palenight#FzfStatusline()
+	execute 'highlight default fzf1 gui=bold guifg=' . s:colors.black.gui . ' guibg=' . s:colors.cyan.gui
+	execute 'highlight default fzf2 guifg=' . s:colors.cyan.gui . ' guibg=' . s:colors.white_mask_3.gui
+	execute 'highlight default fzf3 guifg=' . s:colors.white_mask_3.gui . ' guibg=' . s:colors.white_mask_1.gui
+	execute 'highlight default fzf4 guifg=' . s:colors.white.gui . ' guibg=' . s:colors.white_mask_1.gui
+	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
 endfunction
