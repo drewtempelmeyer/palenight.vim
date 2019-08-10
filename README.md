@@ -27,7 +27,7 @@ let g:lightline.colorscheme = 'palenight'
 To configure airline, add the following line:
 
 ```vim
-let g:airline_theme="palenight"
+let g:airline_theme = "palenight"
 ```
 
 To set a status line for [fzf.vim][fzf.vim], add the following line:
