@@ -32,11 +32,3 @@ let s:colors = {
 function! palenight#GetColors()
   return s:colors
 endfunction
-
-function! palenight#FzfStatusline()
-	execute 'highlight default fzf1 gui=bold guifg=' . s:colors.black.gui . ' guibg=' . s:colors.blue.gui
-	execute 'highlight default fzf2 guifg=' . s:colors.blue.gui . ' guibg=' . s:colors.white_mask_3.gui
-	execute 'highlight default fzf3 guifg=' . s:colors.white_mask_3.gui . ' guibg=' . s:colors.white_mask_1.gui
-	execute 'highlight default fzf4 guifg=' . s:colors.white.gui . ' guibg=' . s:colors.white_mask_1.gui
-	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
-endfunction

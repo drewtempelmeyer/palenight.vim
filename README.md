@@ -30,12 +30,6 @@ To configure airline, add the following line:
 let g:airline_theme = "palenight"
 ```
 
-To set a status line for [fzf.vim][fzf.vim], add the following line:
-
-```vim
-autocmd! User FzfStatusLine call palenight#FzfStatusline()
-```
-
 ### True Colors
 
 To provide the best user experience possible, I recommend enabling true colors. To experience the blissfulness of your editor's true colors, place this in your `.vimrc` or `~/.config/nvim/init.vim` file:
@@ -75,4 +69,3 @@ Contribute to this color scheme and earn your spot in this section of the README
 [onedark]: https://github.com/joshdick/onedark.vim
 [vimplug]: https://github.com/junegunn/vim-plug
 [firaCode]: https://github.com/tonsky/FiraCode
-[fzf.vim]: https://github.com/junegunn/fzf.vim
