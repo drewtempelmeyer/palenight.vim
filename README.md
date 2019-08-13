@@ -24,6 +24,12 @@ To configure lightline, add the following line:
 let g:lightline.colorscheme = 'palenight'
 ```
 
+To configure airline, add the following line:
+
+```vim
+let g:airline_theme = "palenight"
+```
+
 ### True Colors
 
 To provide the best user experience possible, I recommend enabling true colors. To experience the blissfulness of your editor's true colors, place this in your `.vimrc` or `~/.config/nvim/init.vim` file:
