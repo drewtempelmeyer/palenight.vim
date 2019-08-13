@@ -59,10 +59,7 @@ let g:palenight_terminal_italics=1
 
 ## Contributors
 
-Contribute to this color scheme and earn your spot in this section of the README.
-
-* Tony Lambiris [@tonylambiris](https://github.com/tonylambiris/)
-* [@chromz](https://github.com/chromz/)
+[The lovely people that have contributed to palenight.vim](https://github.com/drewtempelmeyer/palenight.vim/graphs/contributors)
 
 [screenshot]: images/screenshot.png
 [materialLink]: https://github.com/equinusocio/material-theme
