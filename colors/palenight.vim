@@ -471,6 +471,20 @@ call s:h("NeomakeInfoSign", { "fg": s:blue })
 call s:h("diffAdded", { "fg": s:green })
 call s:h("diffRemoved", { "fg": s:red })
 
+" liuchengxu/vista.vim
+call s:h("VistaBracket", { "fg": s:yellow })
+call s:h("VistaChildrenNr", { "fg": s:dark_yellow })
+call s:h("VistaScope", { "fg": s:yellow })
+call s:h("VistaTag", { "fg": s:purple })
+call s:h("VistaPrefix", { "fg": s:dark_red })
+call s:h("VistaParenthesis", { "fg": s:white })
+call s:h("VistaColon", { "fg": s:cyan })
+call s:h("VistaIcon", { "fg": s:cyan })
+call s:h("VistaLineNr", { "fg": s:comment_grey })
+call s:h("VistaArgs", { "fg": s:comment_grey })
+call s:h("VistaKind", { "fg": s:comment_grey })
+call s:h("VistaScopeKind", { "fg": s:yellow })
+
 " }}}
 
 " Git Highlighting {{{
