@@ -81,6 +81,7 @@ let s:yellow = s:colors.yellow
 let s:dark_yellow = s:colors.dark_yellow
 let s:blue = s:colors.blue
 let s:purple = s:colors.purple
+let s:blue_purple = s:colors.blue_purple
 let s:cyan = s:colors.cyan
 let s:white = s:colors.white
 let s:black = s:colors.black
@@ -470,6 +471,20 @@ call s:h("NeomakeInfoSign", { "fg": s:blue })
 " tpope/vim-fugitive
 call s:h("diffAdded", { "fg": s:green })
 call s:h("diffRemoved", { "fg": s:red })
+
+" liuchengxu/vista.vim
+call s:h("VistaBracket", { "fg": s:purple })
+call s:h("VistaChildrenNr", { "fg": s:dark_yellow })
+call s:h("VistaScope", { "fg": s:blue_purple })
+call s:h("VistaTag", { "fg": s:purple })
+call s:h("VistaPrefix", { "fg": s:blue_purple })
+call s:h("VistaParenthesis", { "fg": s:purple })
+call s:h("VistaColon", { "fg": s:cyan })
+call s:h("VistaIcon", { "fg": s:cyan })
+call s:h("VistaLineNr", { "fg": s:comment_grey })
+call s:h("VistaArgs", { "fg": s:comment_grey })
+call s:h("VistaKind", { "fg": s:comment_grey })
+call s:h("VistaScopeKind", { "fg": s:yellow })
 
 " }}}
 
