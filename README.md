@@ -21,7 +21,7 @@ colorscheme palenight
 To configure lightline, add the following line:
 
 ```vim
-let g:lightline.colorscheme = 'palenight'
+let g:lightline = { 'colorscheme': 'palenight' }
 ```
 
 To configure airline, add the following line:
