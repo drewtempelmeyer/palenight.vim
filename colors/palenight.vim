@@ -314,6 +314,8 @@ call s:h("jsonSemicolonError", { "fg": s:red, "gui": "reverse" })
 
 " Markdown
 call s:h("markdownCode", { "fg": s:green })
+call s:h("markdownLinkReference", { "fg": s:comment_grey })
+call s:h("markdownJekyllFrontMatter", { "fg": s:comment_grey })
 call s:h("markdownCodeBlock", { "fg": s:green })
 call s:h("markdownCodeDelimiter", { "fg": s:green })
 call s:h("markdownHeadingDelimiter", { "fg": s:red })
