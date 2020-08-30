@@ -451,6 +451,16 @@ call s:h("phpClassNamespaceSeparator", { "fg": s:white })
 call s:h("phpDocTags", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
 call s:h("phpDocParam", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
 
+" Dart
+call s:h("dartLibrary", { "fg": s:purple})
+call s:h("dartTypedef", { "fg": s:purple})
+call s:h("dartClassDecl", { "fg": s:purple})
+call s:h("dartCoreType", { "fg": s:purple})
+call s:h("dartStorageClass", { "fg": s:purple})
+call s:h("dartOperator", { "fg": s:purple})
+call s:h("dartMetadata", { "fg": s:purple})
+call s:h("dartKeyword", { "fg": s:purple})
+
 " }}}
 
 " Plugin Highlighting {{{
