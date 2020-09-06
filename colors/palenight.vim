@@ -498,6 +498,10 @@ call s:h("VistaArgs", { "fg": s:comment_grey })
 call s:h("VistaKind", { "fg": s:comment_grey })
 call s:h("VistaScopeKind", { "fg": s:yellow })
 
+" termdebug
+call s:h("debugBreakpoint", { "fg": s:blue_purple })
+call s:h("debugPC", { "bg": s:blue_purple, "fg": s:black })
+
 " }}}
 
 " Git Highlighting {{{
