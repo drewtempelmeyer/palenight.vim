@@ -498,6 +498,10 @@ call s:h("VistaArgs", { "fg": s:comment_grey })
 call s:h("VistaKind", { "fg": s:comment_grey })
 call s:h("VistaScopeKind", { "fg": s:yellow })
 
+" davidhalter/jedi-vim
+call s:h("jediFunction", { "bg": s:white_mask_11, "fg": s:white })
+call s:h("jediFat", { "bg": s:white_mask_11, "fg": s:blue })
+
 " }}}
 
 " Git Highlighting {{{
