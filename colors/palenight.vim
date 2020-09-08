@@ -93,6 +93,7 @@ let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
 let s:special_grey = s:colors.special_grey
 let s:vertsplit = s:colors.vertsplit
+let s:white_mask_3 = s:colors.white_mask_3
 
 " }}}
 
@@ -501,6 +502,10 @@ call s:h("VistaScopeKind", { "fg": s:yellow })
 " termdebug
 call s:h("debugBreakpoint", { "fg": s:blue_purple })
 call s:h("debugPC", { "bg": s:blue_purple, "fg": s:black })
+
+" davidhalter/jedi-vim
+call s:h("jediFunction", { "bg": s:white_mask_3, "fg": s:white })
+call s:h("jediFat", { "bg": s:white_mask_3, "fg": s:blue , "gui": "bold,underline" })
 
 " }}}
 
