@@ -57,6 +57,20 @@ Italics are a fantastic way to improve the appearance of your code. Italics will
 let g:palenight_terminal_italics=1
 ```
 
+### Overriding Colors
+
+Overriding palenight's colors are supported through setting the
+`g:palenight_color_overrides` variable.  See [palenight.vim](./autoload/palenight.vim)
+for a list of colors that may be overriden.  You must provide `gui`, `cterm`,
+and `cterm16` values for each.
+
+Example: Overriding the background color to pure black
+```vim
+let g:palenight_color_overrides = {
+\    'black': { 'gui': '#000000', "cterm": "0", "cterm16": "0" },
+\}
+```
+
 ## Contributors
 
 [The lovely people that have contributed to palenight.vim](https://github.com/drewtempelmeyer/palenight.vim/graphs/contributors)
