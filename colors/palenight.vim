@@ -566,6 +566,11 @@ if has("nvim")
   call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:white, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
+
+  "  lewis6991/gitsigns.nvim 
+  call s:h("GitSignsAdd", { "fg": s:green })
+  call s:h("GitSignsChange", { "fg": s:yellow })
+  call s:h("GitSignsDelete", { "fg": s:red })
   " }}}
 elseif has('terminal')
   let g:terminal_ansi_colors = [
