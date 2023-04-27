@@ -624,6 +624,22 @@ if has("nvim")
   let g:terminal_color_15 = s:comment_grey.gui
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
+  " }}}
+  " Neovim LSP colors {{{
+  call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
+  call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
+  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:white })
+  call s:h("LspDiagnosticsDefaultHint", { "fg": s:comment_grey })
+  call s:h("LspDiagnosticsUnderlineError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:white, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
+
+  "  lewis6991/gitsigns.nvim 
+  call s:h("GitSignsAdd", { "fg": s:green })
+  call s:h("GitSignsChange", { "fg": s:yellow })
+  call s:h("GitSignsDelete", { "fg": s:red })
+  " }}}
 elseif has('terminal')
   let g:terminal_ansi_colors = [
     \ s:black.gui,
