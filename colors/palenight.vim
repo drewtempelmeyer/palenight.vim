@@ -556,6 +556,27 @@ if has("nvim")
   let g:terminal_color_15 = s:comment_grey.gui
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
+  " }}}
+  " Neovim LSP colors {{{
+  " https://github.com/neovim/neovim/blob/63b3408551561127f7845470eb51404bcd6f547b/runtime/doc/diagnostic.txt#L187
+  call s:h("DiagnosticError", { "fg": s:red })
+  call s:h("DiagnosticWarn", { "fg": s:yellow })
+  call s:h("DiagnosticInfo", { "fg": s:white })
+  call s:h("DiagnosticHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticVirtualTextError", { "fg": s:red })
+  call s:h("DiagnosticVirtualTextWarn", { "fg": s:yellow })
+  call s:h("DiagnosticVirtualTextInfo", { "fg": s:white })
+  call s:h("DiagnosticVirtualTextHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticUnderlineError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineWarn", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineInfo", { "fg": s:white, "gui": "underline", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
+
+  " lewis6991/gitsigns.nvim
+  call s:h("GitSignsAdd", { "fg": s:green })
+  call s:h("GitSignsChange", { "fg": s:yellow })
+  call s:h("GitSignsDelete", { "fg": s:red })
+  " }}}
 elseif has('terminal')
   let g:terminal_ansi_colors = [
     \ s:black.gui,
