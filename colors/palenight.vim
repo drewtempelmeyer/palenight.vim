@@ -647,7 +647,18 @@ endif
 
 " }}}
 
+" Rainbow Delimiters Highlighting {{{
+
+call s:h("RainbowDelimiterRed", { "fg": s:red })
+call s:h("RainbowDelimiterYellow", { "fg": s:yellow })
+call s:h("RainbowDelimiterBlue", { "fg": s:blue })
+call s:h("RainbowDelimiterOrange", { "fg": s:light_red })
+call s:h("RainbowDelimiterGreen", { "fg": s:green })
+call s:h("RainbowDelimiterViolet", { "fg": s:purple })
+call s:h("RainbowDelimiterCyan", { "fg": s:cyan })
+
+" }}}
+
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
-
