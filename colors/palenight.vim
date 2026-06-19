@@ -13,8 +13,6 @@ if exists("syntax_on")
   syntax reset
 endif
 
-set t_Co=256
-
 let g:colors_name="palenight"
 
 " Set to "256" for 256-color terminals, or
@@ -150,23 +148,40 @@ call s:h("DiffAdd", { "bg": s:green, "fg": s:black }) " diff mode: Added line
 call s:h("DiffChange", { "bg": s:yellow, "fg": s:black }) " diff mode: Changed line
 call s:h("DiffDelete", { "bg": s:red, "fg": s:black }) " diff mode: Deleted line
 call s:h("DiffText", { "bg": s:black, "fg": s:yellow }) " diff mode: Changed text within a changed line
+call s:h("Added", { "fg": s:green })
+call s:h("Changed", { "fg": s:yellow })
+call s:h("Removed", { "fg": s:red })
 call s:h("ErrorMsg", { "fg": s:red }) " error messages on the command line
 call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
+call s:h("WinSeparator", { "fg": s:vertsplit })
 call s:h("Folded", { "bg": s:cursor_grey, "fg": s:comment_grey }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:yellow, "bg": s:comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
+call s:h("CurSearch", { "fg": s:black, "bg": s:yellow })
 call s:h("LineNr", { "fg": s:gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("LineNrAbove", { "fg": s:gutter_fg_grey })
+call s:h("LineNrBelow", { "fg": s:gutter_fg_grey })
 call s:h("MatchParen", { "fg": s:blue, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
+call s:h("NormalFloat", { "fg": s:white, "bg": s:menu_grey })
+call s:h("FloatBorder", { "fg": s:vertsplit, "bg": s:menu_grey })
+call s:h("FloatTitle", { "fg": s:green, "bg": s:menu_grey })
+call s:h("FloatFooter", { "fg": s:comment_grey, "bg": s:menu_grey })
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
+call s:h("PmenuKind", { "fg": s:purple, "bg": s:menu_grey })
+call s:h("PmenuKindSel", { "fg": s:black, "bg": s:blue })
+call s:h("PmenuExtra", { "fg": s:comment_grey, "bg": s:menu_grey })
+call s:h("PmenuExtraSel", { "fg": s:black, "bg": s:blue })
+call s:h("PmenuMatch", { "fg": s:yellow, "bg": s:menu_grey, "gui": "bold", "cterm": "bold" })
+call s:h("PmenuMatchSel", { "fg": s:black, "bg": s:blue, "gui": "bold", "cterm": "bold" })
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
 call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
@@ -481,6 +496,48 @@ call s:h("NeomakeWarningSign", { "fg": s:yellow })
 call s:h("NeomakeErrorSign", { "fg": s:red })
 call s:h("NeomakeInfoSign", { "fg": s:blue })
 
+" Neovim diagnostics
+if has("nvim")
+  call s:h("DiagnosticError", { "fg": s:red })
+  call s:h("DiagnosticWarn", { "fg": s:yellow })
+  call s:h("DiagnosticInfo", { "fg": s:blue })
+  call s:h("DiagnosticHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticOk", { "fg": s:green })
+
+  call s:h("DiagnosticVirtualTextError", { "fg": s:red })
+  call s:h("DiagnosticVirtualTextWarn", { "fg": s:yellow })
+  call s:h("DiagnosticVirtualTextInfo", { "fg": s:blue })
+  call s:h("DiagnosticVirtualTextHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticVirtualTextOk", { "fg": s:green })
+
+  call s:h("DiagnosticVirtualLinesError", { "fg": s:red })
+  call s:h("DiagnosticVirtualLinesWarn", { "fg": s:yellow })
+  call s:h("DiagnosticVirtualLinesInfo", { "fg": s:blue })
+  call s:h("DiagnosticVirtualLinesHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticVirtualLinesOk", { "fg": s:green })
+
+  call s:h("DiagnosticUnderlineError", { "sp": s:red, "gui": "undercurl", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineWarn", { "sp": s:yellow, "gui": "undercurl", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineInfo", { "sp": s:blue, "gui": "undercurl", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineHint", { "sp": s:comment_grey, "gui": "undercurl", "cterm": "underline" })
+  call s:h("DiagnosticUnderlineOk", { "sp": s:green, "gui": "undercurl", "cterm": "underline" })
+
+  call s:h("DiagnosticFloatingError", { "fg": s:red })
+  call s:h("DiagnosticFloatingWarn", { "fg": s:yellow })
+  call s:h("DiagnosticFloatingInfo", { "fg": s:blue })
+  call s:h("DiagnosticFloatingHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticFloatingOk", { "fg": s:green })
+
+  call s:h("DiagnosticSignError", { "fg": s:red })
+  call s:h("DiagnosticSignWarn", { "fg": s:yellow })
+  call s:h("DiagnosticSignInfo", { "fg": s:blue })
+  call s:h("DiagnosticSignHint", { "fg": s:comment_grey })
+  call s:h("DiagnosticSignOk", { "fg": s:green })
+
+  call s:h("DiagnosticDeprecated", { "fg": s:comment_grey, "gui": "strikethrough" })
+  call s:h("DiagnosticUnnecessary", { "fg": s:comment_grey })
+endif
+
 " tpope/vim-fugitive
 call s:h("diffAdded", { "fg": s:green })
 call s:h("diffRemoved", { "fg": s:red })
@@ -529,20 +586,29 @@ if has("nvim")
   call s:h("@function.builtin", { "fg": s:cyan })
   call s:h("@function.call", { "fg": s:blue })
   call s:h("@function.macro", { "fg": s:purple, "gui": "italic" })
+  call s:h("@function.method", { "fg": s:blue })
+  call s:h("@function.method.call", { "fg": s:blue })
   call s:h("@include", { "fg": s:blue })
   call s:h("@keyword", { "fg": s:red, "gui": "italic" })
   call s:h("@keyword.function", { "fg": s:blue_purple, "gui": "italic" })
+  call s:h("@keyword.import", { "fg": s:blue })
+  call s:h("@keyword.modifier", { "fg": s:yellow, "gui": "italic" })
   call s:h("@keyword.operator", { "fg": s:white })
   call s:h("@keyword.return", { "fg": s:red })
+  call s:h("@keyword.repeat", { "fg": s:purple })
   call s:h("@label", { "fg": s:purple })
   call s:h("@method", { "fg": s:blue })
   call s:h("@method.call", { "fg": s:blue })
+  call s:h("@module", { "fg": s:blue_purple })
+  call s:h("@module.builtin", { "fg": s:yellow })
   call s:h("@namespace", { "fg": s:blue_purple })
   call s:h("@number", { "fg": s:dark_yellow })
+  call s:h("@number.float", { "fg": s:dark_yellow })
   call s:h("@operator", { "fg": s:white })
   call s:h("@parameter", { "fg": s:white, "gui": "italic" })
   call s:h("@parameter.reference", { "fg": s:menu_grey })
   call s:h("@property", { "fg": s:cyan })
+  call s:h("@punctuation", { "fg": s:white })
   call s:h("@punctuation.bracket", { "fg": s:white })
   call s:h("@punctuation.delimiter", { "fg": s:white })
   call s:h("@punctuation.special", { "fg": s:white })
@@ -552,10 +618,34 @@ if has("nvim")
   call s:h("@string.escape", { "fg": s:visual_grey })
   call s:h("@string.regex", { "fg": s:white })
   call s:h("@string.special", { "fg": s:menu_grey })
+  call s:h("@string.special.path", { "fg": s:green })
+  call s:h("@string.special.symbol", { "fg": s:red })
+  call s:h("@string.special.url", { "fg": s:light_red, "gui": "underline", "cterm": "underline" })
   call s:h("@symbol", { "fg": s:red })
   call s:h("@tag", { "fg": s:light_red })
   call s:h("@tag.attribute", { "fg": s:green })
   call s:h("@tag.delimiter", { "fg": s:white })
+  call s:h("@comment.error", { "fg": s:red })
+  call s:h("@comment.note", { "fg": s:blue })
+  call s:h("@comment.todo", { "fg": s:purple })
+  call s:h("@comment.warning", { "fg": s:yellow })
+  call s:h("@diff.delta", { "fg": s:yellow })
+  call s:h("@diff.minus", { "fg": s:red })
+  call s:h("@diff.plus", { "fg": s:green })
+  call s:h("@markup.heading", { "fg": s:yellow, "gui": "bold", "cterm": "bold" })
+  call s:h("@markup.italic", { "gui": "italic", "cterm": "italic" })
+  call s:h("@markup.link", { "fg": s:cyan })
+  call s:h("@markup.link.label", { "fg": s:white })
+  call s:h("@markup.link.url", { "fg": s:light_red, "gui": "underline", "cterm": "underline" })
+  call s:h("@markup.list", { "fg": s:red })
+  call s:h("@markup.list.checked", { "fg": s:green })
+  call s:h("@markup.list.unchecked", { "fg": s:comment_grey })
+  call s:h("@markup.math", { "fg": s:light_red })
+  call s:h("@markup.raw", { "fg": s:green })
+  call s:h("@markup.raw.block", { "fg": s:green })
+  call s:h("@markup.strikethrough", { "gui": "strikethrough" })
+  call s:h("@markup.strong", { "fg": s:yellow, "gui": "bold", "cterm": "bold" })
+  call s:h("@markup.underline", { "gui": "underline", "cterm": "underline" })
   call s:h("@text.danger", { "fg": s:dark_yellow })
   call s:h("@text.emphasis", { "gui": "italic" })
   call s:h("@text.environment", { "fg": s:light_red })
@@ -570,9 +660,13 @@ if has("nvim")
   call s:h("@text.todo", { "fg": s:purple })
   call s:h("@type", { "fg": s:yellow })
   call s:h("@type.builtin", { "fg": s:dark_yellow })
+  call s:h("@type.definition", { "fg": s:yellow })
   call s:h("@type.qualifier", { "fg": s:yellow })
   call s:h("@variable", { "fg": s:white })
   call s:h("@variable.builtin", { "fg": s:dark_yellow })
+  call s:h("@variable.member", { "fg": s:cyan })
+  call s:h("@variable.parameter", { "fg": s:white, "gui": "italic" })
+  call s:h("@variable.parameter.builtin", { "fg": s:dark_yellow, "gui": "italic" })
 endif
 
 " }}}
@@ -650,4 +744,3 @@ endif
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
-
